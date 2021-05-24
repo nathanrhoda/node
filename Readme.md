@@ -9,6 +9,10 @@ Goal is to see what can be leveraged on Nodejs side to do unit testing
 3. "npm install --save-dev chai" to install chai
 4. "npm install --save-dev -cross-env" for environment variables
 5. "npm install --save-dev chai-as-promised" async await testing of promises
+6. "npm install --save-dev sinon" stubbing  spying framework
+7. "npm install --save-dev sinon-chai" stubbing spying framework different syntax with mocha
+8. "npm install --save-dev rewire" allows testing of private functions
+
 
 # Running tests
 1. mocha <<testgilename.js>>
@@ -26,3 +30,11 @@ npm cache clear --force
 npm install cross-env
 npm install 
 npm test
+
+# Terminology
+
+1. Spy: When you want to monitor code to understand what is happening inside but do not want to stub or change intrinisc behaviour within code flow
+2. Stub: Isolating code to test a specific section while not for instance making a actually call to the DB and return controlled data that has no
+relevance on focus of system or class under test
+
+
