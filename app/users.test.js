@@ -14,7 +14,8 @@ var User = require('./models/user');
 var sandbox = sinon.createSandbox()
 
 describe('users', ()=> {
-    let findSub;
+    let findStub;
+    let deleteStub;
     let sampleArgs;
     let sampleUser;
 
@@ -26,6 +27,7 @@ describe('users', ()=> {
         }
 
         findStub = sandbox.stub(mongoose.Model, 'findById').resolves(sampleUser);
+        deleteStub = sandbox.stub(mongoose.Model, 'remove').resolves('fake_remove_result');
     })
 
     afterEach(()=>{
@@ -70,6 +72,28 @@ describe('users', ()=> {
 
                 done();
             })
-        })
+        })      
     })
+
+    context('delete user', ()=>{
+        it('should check for an id  using return', ()=>{
+            return users.delete().then((result)=>{
+                throw new Error('unexpected success');
+            }).catch((ex)=>{
+                expect(ex).to.be.instanceOf(Error);
+                expect(ex.message).to.equal('Invalid id');
+            })
+        })
+
+        it('should check for errors using eventually', ()=>{
+            return expect(users.delete()).to.eventually.be.rejectedWith('Invalid id');
+        })
+
+        it('should call User.delete', async()=>{
+            let result = await users.delete(123);
+
+            expect(result).to.equal('fake_remove_result');
+            expect(deleteStub).to.be.calledWith({_id:123});
+        })
+    })    
 })
