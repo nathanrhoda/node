@@ -8,6 +8,7 @@ Goal is to see what can be leveraged on Nodejs side to do unit testing
 2. "npm install mocha -g" to install mocha
 3. "npm install --save-dev chai" to install chai
 4. "npm install --save-dev -cross-env" for environment variables
+5. "npm install --save-dev chai-as-promised" async await testing of promises
 
 # Running tests
 1. mocha <<testgilename.js>>
