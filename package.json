@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=development mocha './test/**/*.test.js'"
+    "test": "cross-env NODE_ENV=development mocha './app/**/*.test.js'"
   },
   "repository": {
     "type": "git",
