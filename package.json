@@ -1,0 +1,25 @@
+{
+  "name": "node-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=development mocha './test/**/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanrhoda/node.git"
+  },
+  "author": "Nathan Rhoda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanrhoda/node/issues"
+  },
+  "homepage": "https://github.com/nathanrhoda/node#readme",
+  "devDependencies": {
+    "chai": "^4.3.4"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
