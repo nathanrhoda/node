@@ -90,7 +90,6 @@ describe('demo', ()=>{
           expect(createStub).to.have.been.calledWith('test.txt');
           expect(callStub).to.have.been.calledOnce;
           createStub.restore();
-          callStub.restore();
       })
   })
 

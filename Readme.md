@@ -12,7 +12,7 @@ Goal is to see what can be leveraged on Nodejs side to do unit testing
 6. "npm install --save-dev sinon" stubbing  spying framework
 7. "npm install --save-dev sinon-chai" stubbing spying framework different syntax with mocha
 8. "npm install --save-dev rewire" allows testing of private functions
-
+9. "npm install --save-dev mongoose" object data modelling library helps with stubbing
 
 # Running tests
 1. mocha <<testgilename.js>>
